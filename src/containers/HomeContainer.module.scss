@@ -1,0 +1,15 @@
+.home-container img {
+  z-index: -2;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.home-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #333641 0%, #333641 100%);
+  z-index: -1;
+}

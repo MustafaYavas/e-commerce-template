@@ -14,10 +14,8 @@ const Header = () => {
   };
 
   return (
-    <div
-      className={`container mx-auto px-5 md:px-10 ${styles['header-container']}`}
-    >
-      <div className="flex justify-between items-center ">
+    <div className={` ${styles['header-container']}`}>
+      <div className="container mx-auto px-5 md:px-10 flex justify-between items-center ">
         <Dropwdown
           toggle="GiHamburgerMenu"
           className={`cursor-pointer mt-1 md:mt-0 ${styles['header-icons']}`}
