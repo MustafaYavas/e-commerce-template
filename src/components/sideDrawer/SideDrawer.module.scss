@@ -1,0 +1,62 @@
+.drawer-overlay {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(black, 0.5);
+}
+
+.drawer-container {
+  right: 0;
+  top: 0;
+  padding: 1rem 2rem;
+  height: 100%;
+  background-color: white;
+  width: 35%;
+  animation-name: drawerOpen;
+  animation-duration: 0.5s;
+  -webkit-box-shadow: -10px 0px 5px 0px rgba(black, 0.2);
+  -moz-box-shadow: -10px 0px 5px 0px rgba(black, 0.2);
+  box-shadow: -10px 0px 5px 0px rgba(black, 0.2);
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2rem;
+  }
+
+  .body {
+    height: calc(100% - 76px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .drawer-button {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}
+
+@keyframes drawerOpen {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 35%;
+  }
+}
