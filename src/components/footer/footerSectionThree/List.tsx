@@ -15,6 +15,7 @@ const List = ({ title, items, href }: ListProps) => {
       <div className="flex flex-col text-slate-400 gap-2">
         {items.map((item, index) => (
           <Link
+            key={item}
             href={`/${href[index]}`}
             className="mt-4 font-semibold hover:text-slate-100"
           >

@@ -4,7 +4,7 @@ import styles from '../Footer.module.scss';
 const FooterSectionTwo = () => {
   return (
     <div className={styles['footer-two-container']}>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-5 md:px-0">
+      <div className="grid-three px-5 md:px-0">
         <div className="flex flex-col justify-center items-center">
           <Icon name="GiCargoShip" color="rgb(31 41 55)" size={52} />
           <h4 className="text-xl my-4 text-slate-600">Priority Shipping</h4>

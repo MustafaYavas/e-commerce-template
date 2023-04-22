@@ -2,10 +2,21 @@ import CargoCard from '@/components/card/cargo/CargoCard';
 
 const SectionFourBody = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <CargoCard />
-      <CargoCard />
-      <CargoCard />
+    <div className="grid-three">
+      <CargoCard
+        title="Purchase Securely"
+        left={true}
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      />
+      <CargoCard
+        title="Ships from warehouse"
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      />
+      <CargoCard
+        title="Style your room"
+        left={true}
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      />
     </div>
   );
 };

@@ -35,7 +35,7 @@ const SideDrawer = ({ isOpen, closeDrawer }: SideDrawerProps) => {
             <div className={styles.header}>
               <div className="flex items-center gap-5">
                 <h4 className="text-xl font-semibold">Your Cart</h4>
-                <span className="rounded bg-rose-600 text-white font-semibold text-sm px-2 mt-1">
+                <span className="rounded bg-rose-600 text-white font-semibold text-sm px-2">
                   0
                 </span>
               </div>

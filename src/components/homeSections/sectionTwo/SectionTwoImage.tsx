@@ -10,7 +10,7 @@ const SectionTwoImage = () => {
         width="0"
         height="0"
         sizes="100vw"
-        className={`w-full ${styles['section-two-img']}`}
+        className={`w-full card-img-radius ${styles['section-two-img']}`}
       />
     </div>
   );

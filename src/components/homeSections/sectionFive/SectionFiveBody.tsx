@@ -1,11 +1,24 @@
 import BlogCard from '@/components/card/blog/BlogCard';
+import { getDayAndNumber } from '@/helpers/date';
 
 const SectionFiveBody = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
+    <div className="grid-three">
+      <BlogCard
+        date={getDayAndNumber()}
+        text="Maiores fuga non mollitia nam eligendi ab neque rem ?"
+        className="card-over-up"
+      />
+      <BlogCard
+        date={getDayAndNumber()}
+        text="Maiores fuga non mollitia nam eligendi ab neque rem ?"
+        className="card-over-up"
+      />
+      <BlogCard
+        date={getDayAndNumber()}
+        text="Maiores fuga non mollitia nam eligendi ab neque rem ?"
+        className="card-over-up"
+      />
     </div>
   );
 };

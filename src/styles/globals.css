@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.grid-two-reverse {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.grid-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.card-img-radius {
+  border-radius: 8px;
+}
+
+.card-over-up:hover {
+  transform: translateY(-10px);
+  transition: 0.25s;
+}
+
+.card-over-down:hover {
+  transform: translateY(10px);
+  transition: 0.25s;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-two,
+  .grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-two-reverse {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-img {
+    height: 100%;
+  }
+}
