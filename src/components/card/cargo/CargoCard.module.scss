@@ -1,0 +1,34 @@
+.card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+}
+
+.cargo-badge {
+  // background-color: rgba(0, 0, 0, 0.9);
+  width: 3.5rem;
+  height: 3.5rem;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: 8px solid white;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 768px) {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 18px;
+    border: 4px solid white;
+  }
+}

@@ -1,8 +1,17 @@
-.section-one-container {
-  @media screen and (min-width: 768px) {
+.section-two-img {
+  height: 90% !important;
+}
+
+@media screen and (min-width: 768px) {
+  .section-one-container,
+  .section-two-container {
+    min-height: 100vh;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .section-one-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
   }
 }
