@@ -5,9 +5,13 @@ const SectionOneBody = () => {
   return (
     <>
       <div className="grid-three">
-        <ProductCard productName="Tate Armchair" />
-        <ProductCard productName="Tate Armchair" discount={true} />
-        <ProductCard productName="Tate Armchair" />
+        <ProductCard productName="Tate Armchair" price={899.0} />
+        <ProductCard
+          productName="Tate Armchair"
+          discount={true}
+          price={759.0}
+        />
+        <ProductCard productName="Tate Armchair" price={129.0} />
       </div>
     </>
   );

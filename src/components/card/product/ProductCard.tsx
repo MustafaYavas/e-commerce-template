@@ -5,10 +5,12 @@ import Link from 'next/link';
 
 interface CardProps {
   productName: string;
+  image: string;
+  price: string;
   discount?: boolean;
 }
 
-const ProductCard = ({ productName, discount }: CardProps) => {
+const ProductCard = ({ productName, image, price, discount }: CardProps) => {
   const createLink = (name: string) => {
     return name.replace(' ', '-').toLowerCase();
   };
@@ -19,12 +21,12 @@ const ProductCard = ({ productName, discount }: CardProps) => {
       className={`card ${styles['product-card-container']} mb-5 md:mb-0`}
     >
       <Image
-        src="https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1206&q=80"
+        src={image}
         alt="latest"
         width="0"
         height="0"
         sizes="100vw"
-        className="w-full h-auto"
+        className="card-img"
       />
       <div className="card-body">
         <h2 className="card-title text-lg">{productName}</h2>
@@ -32,12 +34,12 @@ const ProductCard = ({ productName, discount }: CardProps) => {
           {discount ? (
             <div>
               <span className="line-through text-slate-400 mr-2">
-                $ 899.00 USD
+                $ {price} USD
               </span>
-              <span className="text-red-600">$ 899.00 USD</span>
+              <span className="text-red-600">$ {price} USD</span>
             </div>
           ) : (
-            <span className="text-slate-500">$ 899.00 USD</span>
+            <span className="text-slate-500">$ {price} USD</span>
           )}
         </div>
         {discount && (

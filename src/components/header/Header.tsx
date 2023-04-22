@@ -58,19 +58,16 @@ const Header = () => {
         <Link href="store" className="hover:text-black">
           All
         </Link>
-        <Link href="/category/sale" className="hover:text-black ml-0 md:ml-5">
+        <Link href="/store/sale" className="hover:text-black ml-0 md:ml-5">
           Sale
         </Link>
-        <Link href="/category/dining" className="hover:text-black ml-0 md:ml-5">
+        <Link href="/store/dining" className="hover:text-black ml-0 md:ml-5">
           Dining
         </Link>
-        <Link href="/category/living" className="hover:text-black ml-0 md:ml-5">
+        <Link href="/store/living" className="hover:text-black ml-0 md:ml-5">
           Living
         </Link>
-        <Link
-          href="/category/bedroom"
-          className="hover:text-black ml-0 md:ml-5"
-        >
+        <Link href="/store/bedroom" className="hover:text-black ml-0 md:ml-5">
           Bedroom
         </Link>
       </div>
