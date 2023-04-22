@@ -1,6 +1,7 @@
 import Header from '@/components/header/Header';
 import '../styles/globals.css';
 import { Akshar } from 'next/font/google';
+import Footer from '@/components/footer/Footer';
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={akshar.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
