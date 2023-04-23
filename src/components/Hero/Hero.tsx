@@ -8,7 +8,7 @@ const Hero = () => {
       <p className={`${styles['subtitle']} hidden md:block`}>
         Our products have been renewed! Check out our spring collection.
       </p>
-      <Link href="/category/sale">SHOP THE SALE</Link>
+      <Link href="/store/sale">SHOP THE SALE</Link>
     </div>
   );
 };

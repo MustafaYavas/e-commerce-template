@@ -1,6 +1,6 @@
-import ProductCard from '@/components/card/product/ProductCard';
-import products from '../../../products.json';
+import products from '../../../../products.json';
 import { Product } from '@/helpers/types';
+import StoreContainer from '@/containers/StoreContainer';
 
 const page = ({ params }: any) => {
   let allProducts: Product[] = [];
@@ -14,19 +14,7 @@ const page = ({ params }: any) => {
       );
   } else allProducts = products;
 
-  return (
-    <>
-      {allProducts.map((prod) => (
-        <ProductCard
-          key={prod.id}
-          productName={prod.product_name}
-          image={prod.image}
-          price={prod.price}
-          discount={prod.discount}
-        />
-      ))}
-    </>
-  );
+  return <StoreContainer products={allProducts} />;
 };
 
 export default page;

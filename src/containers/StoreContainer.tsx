@@ -1,7 +1,11 @@
 import ProductCard from '@/components/card/product/ProductCard';
-import products from '../../products.json';
+import { Product } from '@/helpers/types';
 
-const page = () => {
+interface StoreContainerProps {
+  products: Product[];
+}
+
+const StoreContainer = ({ products }: StoreContainerProps) => {
   return (
     <>
       {products.map((prod) => (
@@ -17,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default StoreContainer;

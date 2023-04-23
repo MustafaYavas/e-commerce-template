@@ -11,7 +11,7 @@ interface CategoryCardProps {
 const CategoryCard = ({ categoryName, left }: CategoryCardProps) => {
   return (
     <Link
-      href={`/category/${categoryName.toLowerCase()}`}
+      href={`/store/${categoryName.toLowerCase()}`}
       className="text-center grid grid-cols-2 md:grid-cols-1 card-over-down"
     >
       <CardTitle

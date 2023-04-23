@@ -1,19 +1,19 @@
 import ProductCard from '@/components/card/product/ProductCard';
-import React from 'react';
+import products from '../../../products.json';
 
 const SectionOneBody = () => {
   return (
-    <>
-      <div className="grid-three">
-        <ProductCard productName="Tate Armchair" price={899.0} />
+    <div className="grid-three">
+      {products.slice(0, 3).map((prod) => (
         <ProductCard
-          productName="Tate Armchair"
-          discount={true}
-          price={759.0}
+          key={prod.id}
+          productName={prod.product_name}
+          price={prod.price}
+          image={prod.image}
+          discount={prod.discount}
         />
-        <ProductCard productName="Tate Armchair" price={129.0} />
-      </div>
-    </>
+      ))}
+    </div>
   );
 };
 

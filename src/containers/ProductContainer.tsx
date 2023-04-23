@@ -1,32 +1,21 @@
-import Steps from '@/components/steps/Steps';
-import products from '../../../products.json';
-import { Product } from '@/helpers/types';
 import Image from 'next/image';
-import DiscountPrice from '@/components/discountPrice/DiscountPrice';
-import SecondaryInfos from '@/components/productInfos/SecondaryInfos';
-import ProductActions from '@/components/productInfos/ProductActions';
+import React from 'react';
+
 import ProductCard from '@/components/card/product/ProductCard';
+import DiscountPrice from '@/components/discountPrice/DiscountPrice';
+import ProductActions from '@/components/productInfos/ProductActions';
+import SecondaryInfos from '@/components/productInfos/SecondaryInfos';
+import Steps from '@/components/steps/Steps';
 import Title from '@/components/title/Title';
+import { Product } from '@/helpers/types';
+import styles from './ProductContainer.module.scss';
 
-const page = ({ params }: any) => {
-  let newArr = params.productName.split('-');
-  let productName = '';
-  let product = {} as Product;
-  let similarProducts: Product[] = [];
+interface ProductContainer {
+  product: Product;
+  similars: Product[];
+}
 
-  for (let i = 0; i < newArr.length; i++) {
-    productName += newArr[i][0].toUpperCase() + newArr[i].substring(1) + ' ';
-  }
-
-  products.map((prod) => {
-    if (prod.product_name.trim() === productName.trim()) product = prod;
-  });
-
-  products.map((prod) => {
-    if (product && prod.category === product.category && prod.id !== product.id)
-      similarProducts.push(prod);
-  });
-
+const ProductContainer = ({ product, similars }: ProductContainer) => {
   const {
     id,
     image,
@@ -41,25 +30,22 @@ const page = ({ params }: any) => {
     madeIn,
   } = product;
 
-  let similars =
-    similarProducts?.length > 2 ? similarProducts.slice(0, 3) : similarProducts;
-
   return (
     <div className="container mx-auto px-5 md:px-10 mt-10 min-h-screen border-b">
       <Steps product={product} />
       <div className="grid-two mt-10">
         <Image
-          src={product.image}
+          src={image}
           alt="product"
           height={0}
           width={0}
           sizes="100vw"
-          className="w-full h-auto card-img-radius"
+          className={`w-full h-auto card-img-radius ${styles['product-image']}`}
         />
 
         <div className="md:pl-10">
           <h2 className="text-2xl md:text-4xl tracking-wider mb-3 text-center md:text-start">
-            {product.product_name}
+            {product_name}
           </h2>
 
           <DiscountPrice
@@ -105,4 +91,4 @@ const page = ({ params }: any) => {
   );
 };
 
-export default page;
+export default ProductContainer;

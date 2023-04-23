@@ -52,7 +52,13 @@ const FooterSectionThree = () => {
           <List
             title="Shop"
             items={['All', 'Sale', 'Dining', 'Living', 'Bedroom']}
-            href={['store', 'sale', 'dining', 'living', 'bedroom']}
+            href={[
+              'store',
+              'store/sale',
+              'store/dining',
+              'store/living',
+              'store/bedroom',
+            ]}
           />
 
           <List

@@ -18,7 +18,7 @@ const Steps = ({ product }: StepsProps) => {
       </Link>
       <Icon name="AiFillCaretRight" size={12} />
       <Link
-        href={product?.category.toLowerCase()}
+        href={`/store/${product?.category.toLowerCase()}`}
         className="text-base md:text-lg"
       >
         {product?.category}
