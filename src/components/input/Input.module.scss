@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 50%;
+
+  input {
+    outline: none;
+    border-bottom: 2px solid rgb(100 116 139);
+    padding: 0.25rem 1rem;
+    width: 100%;
+
+    &:focus {
+      border-bottom: 2px solid rgb(0, 0, 0);
+    }
+  }
+}
