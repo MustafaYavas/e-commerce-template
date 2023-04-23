@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import styles from './ProductCard.module.scss';
 import Link from 'next/link';
+import DiscountPrice from '@/components/discountPrice/DiscountPrice';
 
 interface CardProps {
   productName: string;
@@ -12,7 +13,7 @@ interface CardProps {
 
 const ProductCard = ({ productName, image, price, discount }: CardProps) => {
   const createLink = (name: string) => {
-    return name.replace(' ', '-').toLowerCase();
+    return name.replaceAll(' ', '-').toLowerCase();
   };
 
   return (
@@ -30,17 +31,8 @@ const ProductCard = ({ productName, image, price, discount }: CardProps) => {
       />
       <div className="card-body">
         <h2 className="card-title text-lg">{productName}</h2>
-        <div className="card-actions justify-start text-lg  font-semibold">
-          {discount ? (
-            <div>
-              <span className="line-through text-slate-400 mr-2">
-                $ {price} USD
-              </span>
-              <span className="text-red-600">$ {price} USD</span>
-            </div>
-          ) : (
-            <span className="text-slate-500">$ {price} USD</span>
-          )}
+        <div className="card-actions justify-start text-lg font-semibold">
+          <DiscountPrice discount={discount!} price={price} />
         </div>
         {discount && (
           <span

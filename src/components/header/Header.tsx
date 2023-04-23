@@ -55,7 +55,7 @@ const Header = () => {
         className="flex justify-center items-center gap-4 md:gap-10 mt-3 
         text-gray-400 text-sm md:text-lg font-semibold py-4"
       >
-        <Link href="store" className="hover:text-black">
+        <Link href="/store" className="hover:text-black">
           All
         </Link>
         <Link href="/store/sale" className="hover:text-black ml-0 md:ml-5">

@@ -4,6 +4,7 @@ import {
   AiOutlineTwitter,
   AiFillFacebook,
   AiOutlineInstagram,
+  AiFillCaretRight,
 } from 'react-icons/ai';
 import { MdShoppingCart } from 'react-icons/md';
 import { GrClose } from 'react-icons/gr';
@@ -104,6 +105,14 @@ const Icon = ({ name, size, className, color }: IconProps) => {
         className={className}
         size={size}
         // color={color ? color : 'black'}
+      />
+    );
+  } else if (name === 'AiFillCaretRight') {
+    return (
+      <AiFillCaretRight
+        className={className}
+        size={size}
+        color={color ? color : 'black'}
       />
     );
   } else {

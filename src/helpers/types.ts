@@ -5,4 +5,9 @@ export interface Product {
   category: string;
   price: string;
   discount: boolean;
+  weight: string;
+  materials: string[];
+  info: string;
+  dimensions: string;
+  madeIn: string;
 }

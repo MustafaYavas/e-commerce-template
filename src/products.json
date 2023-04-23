@@ -5,7 +5,12 @@
     "image": "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Dining",
     "price": "329.00",
-    "discount": true
+    "discount": true,
+    "weight": "6KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 2,
@@ -13,7 +18,12 @@
     "image": "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80",
     "category": "Dining",
     "price": "459.00",
-    "discount": true
+    "discount": true,
+    "weight": "5KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 3,
@@ -21,7 +31,12 @@
     "image": "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Dining",
     "price": "159.99",
-    "discount": false
+    "discount": false,
+    "weight": "7KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 4,
@@ -29,7 +44,12 @@
     "image": "https://images.unsplash.com/photo-1622147681210-d7da05b4a7d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
     "category": "Dining",
     "price": "149.49",
-    "discount": true
+    "discount": true,
+    "weight": "8KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 5,
@@ -37,7 +57,12 @@
     "image": "https://images.unsplash.com/photo-1589584649628-b597067e07a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Dining",
     "price": "199.99",
-    "discount": false
+    "discount": false,
+    "weight": "6KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 6,
@@ -45,7 +70,12 @@
     "image": "https://images.unsplash.com/photo-1618520408841-61a1c5ee84d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1527&q=80",
     "category": "Dining",
     "price": "459.00",
-    "discount": true
+    "discount": true,
+    "weight": "7KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 7,
@@ -53,7 +83,12 @@
     "image": "https://images.unsplash.com/photo-1601366533287-5ee4c763ae4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
     "category": "Living",
     "price": "459.00",
-    "discount": false
+    "discount": false,
+    "weight": "14KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 8,
@@ -61,7 +96,12 @@
     "image": "https://images.unsplash.com/photo-1542372147193-a7aca54189cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Living",
     "price": "469.00",
-    "discount": false
+    "discount": false,
+    "weight": "6KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 9,
@@ -69,7 +109,12 @@
     "image": "https://images.unsplash.com/photo-1519961655809-34fa156820ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Living",
     "price": "999.00",
-    "discount": false
+    "discount": false,
+    "weight": "23KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 10,
@@ -77,7 +122,12 @@
     "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
     "category": "Living",
     "price": "1199.00",
-    "discount": false
+    "discount": false,
+    "weight": "24KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 11,
@@ -85,7 +135,12 @@
     "image": "https://images.unsplash.com/photo-1542728928-1413d1894ed1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
     "category": "Living",
     "price": "249.00",
-    "discount": true
+    "discount": true,
+    "weight": "2KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 12,
@@ -93,7 +148,12 @@
     "image": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Living",
     "price": "459.00",
-    "discount": true
+    "discount": true,
+    "weight": "2KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 13,
@@ -101,7 +161,12 @@
     "image": "https://images.unsplash.com/photo-1605984522226-1b840e9c1de2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
     "category": "Living",
     "price": "199.00",
-    "discount": false
+    "discount": false,
+    "weight": "1KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 14,
@@ -109,7 +174,12 @@
     "image": "https://images.unsplash.com/photo-1582356630861-61bb9b41f541?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Living",
     "price": "259.00",
-    "discount": true
+    "discount": true,
+    "weight": "1KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 15,
@@ -117,7 +187,12 @@
     "image": "https://images.unsplash.com/photo-1616267231960-10c4a265c100?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Living",
     "price": "159.00",
-    "discount": false
+    "discount": false,
+    "weight": "5KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 16,
@@ -125,7 +200,12 @@
     "image": "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     "category": "Living",
     "price": "69.00",
-    "discount": false
+    "discount": false,
+    "weight": "2KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 17,
@@ -133,7 +213,12 @@
     "image": "https://images.unsplash.com/photo-1554577621-1a3def0b656c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
     "category": "Bedroom",
     "price": "59.00",
-    "discount": false
+    "discount": false,
+    "weight": "2KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 18,
@@ -141,7 +226,12 @@
     "image": "https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
     "category": "Bedroom",
     "price": "799.00",
-    "discount": false
+    "discount": false,
+    "weight": "41KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 19,
@@ -149,7 +239,12 @@
     "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     "category": "Bedroom",
     "price": "999.00",
-    "discount": true
+    "discount": true,
+    "weight": "44KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   },
   {
     "id": 20,
@@ -157,6 +252,11 @@
     "image": "https://images.unsplash.com/photo-1588046130717-0eb0c9a3ba15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=786&q=80",
     "category": "Bedroom",
     "price": "1299.00",
-    "discount": false
+    "discount": false,
+    "weight": "42KG",
+    "materials": ["Wooden", "Steel"],
+    "info": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "dimensions": "19cm x 24cm x 45cm",
+    "madeIn": "Turkey"
   }
 ]
