@@ -127,22 +127,17 @@ const page = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <p className="cursor-pointer text-zinc-950 hover:text-zinc-800">
-            {isLogin ? (
-              <span onClick={() => setIsLogin(false)}>New here?</span>
-            ) : (
-              <span onClick={() => setIsLogin(true)}>Already member?</span>
-            )}
-          </p>
           <Button
+            isLink={false}
             isFill={true}
             text={<span>GO</span>}
-            className="text-lg font-medium w-1/2 px-5 py-2 rounded"
+            className="text-lg font-medium w-1/2 px-5 py-2"
           />
         </form>
 
         <div className="w-full text-center mt-10">
           <Button
+            isLink={false}
             isFill={false}
             text={
               <span className="flex justify-center items-center gap-3">
@@ -151,7 +146,7 @@ const page = () => {
               </span>
             }
             onClick={() => signIn('google')}
-            className="text-lg font-medium w-1/2 px-5 py-2 rounded border border-black"
+            className="text-lg font-medium w-1/2 px-5 py-2"
           />
         </div>
       </div>

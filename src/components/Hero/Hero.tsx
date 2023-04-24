@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import styles from './Hero.module.scss';
+import Button from '../button/Button';
 
 const Hero = () => {
   return (
@@ -8,7 +8,12 @@ const Hero = () => {
       <p className={`${styles['subtitle']} hidden md:block`}>
         Our products have been renewed! Check out our spring collection.
       </p>
-      <Link href="/store/sale">SHOP THE SALE</Link>
+      <Button
+        isLink={true}
+        href="/store"
+        isFill={true}
+        text={<span>SHOP THE SALE</span>}
+      />
     </div>
   );
 };

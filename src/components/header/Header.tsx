@@ -27,7 +27,7 @@ const Header = () => {
           href={['blog', 'about', 'contact', 'faq', 'legal']}
         />
         <h1 className="text-2xl md:text-3xl ml-2 md:ml-5 font-bold tracking-widest">
-          FURNY
+          <Link href="/">FURNY</Link>
         </h1>
         <div className="flex justify-between items-center gap-2 md:gap-5 mt-1 md:mt-0">
           <Icon

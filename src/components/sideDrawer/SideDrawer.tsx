@@ -1,8 +1,8 @@
 'use client';
-import Link from 'next/link';
 import Icon from '../Icon/Icon';
 import styles from './SideDrawer.module.scss';
 import { useEffect, useState } from 'react';
+import Button from '../button/Button';
 
 interface SideDrawerProps {
   isOpen: boolean;
@@ -51,9 +51,12 @@ const SideDrawer = ({ isOpen, closeDrawer }: SideDrawerProps) => {
 
             <div className={styles.body}>
               <p className="text-xl font-semibold">Your cart is empty.</p>
-              <Link href="store" className={styles['drawer-button']}>
-                VISIT STORE
-              </Link>
+              <Button
+                isLink={true}
+                href="/store"
+                isFill={true}
+                text={<span>VISIT STORE</span>}
+              />
             </div>
           </>
         )}

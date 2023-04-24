@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import styles from '../Footer.module.scss';
+import Button from '@/components/button/Button';
 
 const MailInput = () => {
   const [isJoined, setIsJoined] = useState(false);
@@ -26,9 +27,12 @@ const MailInput = () => {
             placeholder="Email Adress"
             className="col-span-1 md:col-span-2"
           />
-          <button onClick={handleJoinMailList}>
-            {isLoading ? 'PLEASE WAIT...' : 'SUBSCRIBE'}
-          </button>
+          <Button
+            isLink={false}
+            isFill={true}
+            text={<span>{isLoading ? 'PLEASE WAIT...' : 'SUBSCRIBE'}</span>}
+            onClick={handleJoinMailList}
+          />
         </>
       ) : (
         <div className="bg-gray-300 font-light text-lg col-span-3 py-5 text-center text-black">
