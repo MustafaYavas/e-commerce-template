@@ -1,14 +1,22 @@
+import React from 'react';
+
 interface ButtonProps {
+  isFill: boolean;
   className?: string;
-  text: string;
+  text: React.ReactElement;
   onClick?: () => void;
 }
 
-const Button = ({ className, text, onClick }: ButtonProps) => {
+const Button = ({ isFill, className, text, onClick }: ButtonProps) => {
   return (
     <>
       <button
-        className={`bg-zinc-950 hover:bg-zinc-800 text-white ${className}`}
+        className={`${
+          isFill
+            ? 'border border-zinc-950 bg-zinc-950 hover:bg-white ' +
+              'text-white hover:text-black hover:border hover:border-zinc-950'
+            : 'bg-white hover:bg-zinc-950 text-black hover:text-white'
+        } ${className}`}
         onClick={onClick}
       >
         {text}

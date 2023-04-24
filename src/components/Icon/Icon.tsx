@@ -5,11 +5,13 @@ import {
   AiFillFacebook,
   AiOutlineInstagram,
   AiFillCaretRight,
+  AiOutlineLogout,
 } from 'react-icons/ai';
 import { MdShoppingCart } from 'react-icons/md';
 import { GrClose } from 'react-icons/gr';
 import { FaShippingFast, FaHome } from 'react-icons/fa';
 import { BsPinterest } from 'react-icons/bs';
+import { FcGoogle } from 'react-icons/fc';
 
 interface IconProps {
   name: string;
@@ -110,6 +112,22 @@ const Icon = ({ name, size, className, color }: IconProps) => {
   } else if (name === 'AiFillCaretRight') {
     return (
       <AiFillCaretRight
+        className={className}
+        size={size}
+        color={color ? color : 'black'}
+      />
+    );
+  } else if (name === 'AiOutlineLogout') {
+    return (
+      <AiOutlineLogout
+        className={className}
+        size={size}
+        color={color ? color : 'black'}
+      />
+    );
+  } else if (name === 'FcGoogle') {
+    return (
+      <FcGoogle
         className={className}
         size={size}
         color={color ? color : 'black'}

@@ -1,14 +1,26 @@
 'use client';
 import { useState } from 'react';
+import { signIn, useSession } from 'next-auth/react';
+import { ToastContainer } from 'react-toastify';
+import { useRouter } from 'next/navigation';
+
 import ImageWithText from '@/components/imageWithText/ImageWithText';
 import Input from '@/components/input/Input';
 import Button from '@/components/button/Button';
+import { setError } from '@/helpers/error';
+import Loading from '@/components/loading/Loading';
+import Icon from '@/components/Icon/Icon';
 
 const page = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const session = useSession();
+
+  if (session?.status === 'authenticated') router.replace('/');
 
   const imageOverElement = () => {
     return (
@@ -34,8 +46,51 @@ const page = () => {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (email === '' || password === '' || (!isLogin && name === '')) {
+      setError('Inputs can not be left blank!', 3000);
+      return;
+    }
+    if (password.length < 5) {
+      setError('Password must be at least 5 letters!', 3000);
+      return;
+    }
+
+    setIsLoading(true);
+    if (!isLogin) {
+      try {
+        await fetch('/api/signup', {
+          method: 'POST',
+          body: JSON.stringify({ name, email, password }),
+        });
+        router.replace('/');
+      } catch (error) {
+        throw new Error('Something went wrong while signing up!');
+      }
+      setIsLoading(false);
+    } else {
+      try {
+        signIn('credentials', {
+          redirect: false,
+          email,
+          password,
+        })
+          .then((res) => {
+            if (res!.ok) router.replace('/');
+            else setError(res!.error!, 5000);
+          })
+          .catch((error) => {
+            throw new Error(error);
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      } catch (error) {
+        throw new Error('Something went wrong while logging in!');
+      }
+    }
   };
 
   return (
@@ -71,18 +126,34 @@ const page = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+
+          <p className="cursor-pointer text-zinc-950 hover:text-zinc-800">
+            {isLogin ? (
+              <span onClick={() => setIsLogin(false)}>New here?</span>
+            ) : (
+              <span onClick={() => setIsLogin(true)}>Already member?</span>
+            )}
+          </p>
           <Button
-            text="GO"
+            isFill={true}
+            text={<span>GO</span>}
             className="text-lg font-medium w-1/2 px-5 py-2 rounded"
           />
         </form>
-        <p className="cursor-pointer mt-5 text-zinc-950 hover:text-zinc-800">
-          {isLogin ? (
-            <span onClick={() => setIsLogin(false)}>New here?</span>
-          ) : (
-            <span onClick={() => setIsLogin(true)}>Already member?</span>
-          )}
-        </p>
+
+        <div className="w-full text-center mt-10">
+          <Button
+            isFill={false}
+            text={
+              <span className="flex justify-center items-center gap-3">
+                <Icon name="FcGoogle" />
+                LOGIN WITH GOOGLE
+              </span>
+            }
+            onClick={() => signIn('google')}
+            className="text-lg font-medium w-1/2 px-5 py-2 rounded border border-black"
+          />
+        </div>
       </div>
 
       <div className="w-2/5 relative h-full hidden md:flex justify-center items-center text-white ">
@@ -93,6 +164,9 @@ const page = () => {
           className="opacity-40"
         />
       </div>
+
+      {isLoading && <Loading />}
+      <ToastContainer />
     </div>
   );
 };

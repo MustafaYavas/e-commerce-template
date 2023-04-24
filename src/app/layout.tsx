@@ -1,5 +1,8 @@
-import '../styles/globals.css';
+import SessionAuthProvider from '@/components/SessionAuthProvider';
 import { Akshar } from 'next/font/google';
+import 'react-toastify/dist/ReactToastify.css';
+
+import '../styles/globals.css';
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={akshar.className}>{children}</body>
+      <body className={akshar.className}>
+        <SessionAuthProvider children={children} />
+      </body>
     </html>
   );
 }

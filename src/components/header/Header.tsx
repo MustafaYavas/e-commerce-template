@@ -1,13 +1,16 @@
 'use client';
-import styles from './Header.module.scss';
+import { useState } from 'react';
 import Link from 'next/link';
+import { useSession, signOut } from 'next-auth/react';
+
+import styles from './Header.module.scss';
 import Dropwdown from '../dropdown/Dropdown';
 import Icon from '../Icon/Icon';
 import SideDrawer from '../sideDrawer/SideDrawer';
-import { useState } from 'react';
 
 const Header = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const { data } = useSession();
 
   const closeDrawer = () => {
     setOpenDrawer(false);
@@ -45,6 +48,16 @@ const Header = () => {
               0
             </span>
           </div>
+
+          {data?.user && (
+            <span onClick={() => signOut()} title="Signout">
+              <Icon
+                name="AiOutlineLogout"
+                className={`cursor-pointer ${styles['header-icons']}`}
+                color="black"
+              />
+            </span>
+          )}
         </div>
       </div>
 
