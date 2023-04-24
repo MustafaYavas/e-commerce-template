@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import styles from './imageWithText.module.scss';
+import styles from './ImageWithText.module.scss';
 
 interface ImageWithTextProps {
   image: string;
