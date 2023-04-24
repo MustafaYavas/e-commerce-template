@@ -20,6 +20,7 @@ const ProductActions = () => {
         onChange={(e) => setValue(e.target.value)}
       />
       <Button
+        isLink={false}
         isFill={true}
         className="w-full rounded md:text-xl tracking-wider"
         text={<span>ADD TO CART</span>}
