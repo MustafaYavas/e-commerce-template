@@ -48,6 +48,11 @@ const cartSlice = createSlice({
           state.itemTypeCount = state.itemTypeCount + 1;
         }
       }
+
+      state.total = 0;
+      state.items.map((item) => {
+        state.total += parseInt(item.price) * item.quantity;
+      });
     },
 
     setAllItemsToCart: (

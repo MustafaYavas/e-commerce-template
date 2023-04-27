@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './ProductCard.module.scss';
 import Link from 'next/link';
 import DiscountPrice from '@/components/discountPrice/DiscountPrice';
+import { createLinkFromName } from '@/helpers/general';
 
 interface CardProps {
   productName: string;
@@ -12,13 +13,9 @@ interface CardProps {
 }
 
 const ProductCard = ({ productName, image, price, discount }: CardProps) => {
-  const createLink = (name: string) => {
-    return name.replaceAll(' ', '-').toLowerCase();
-  };
-
   return (
     <Link
-      href={`/product/${createLink(productName)}`}
+      href={`/product/${createLinkFromName(productName)}`}
       className={`card ${styles['product-card-container']} mb-5 md:mb-0`}
     >
       <Image
