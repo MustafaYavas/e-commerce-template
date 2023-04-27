@@ -11,3 +11,12 @@ export interface Product {
   dimensions: string;
   madeIn: string;
 }
+
+export interface CartProduct {
+  id: number;
+  product_name: string;
+  image: string;
+  price: string;
+  discount: boolean;
+  quantity: number;
+}

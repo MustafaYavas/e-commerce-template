@@ -1,4 +1,4 @@
-import SessionAuthProvider from '@/components/SessionAuthProvider';
+import Providers from '@/components/Providers';
 import { Akshar } from 'next/font/google';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={akshar.className}>
-        <SessionAuthProvider children={children} />
+        <Providers children={children} />
       </body>
     </html>
   );

@@ -27,9 +27,10 @@ const Button = ({
         </Link>
       ) : (
         <button
-          className={`${
-            isFill ? styles['button-fill'] : styles.button
-          } ${className}`}
+          className={`
+            ${className} 
+            ${isFill ? styles['button-fill'] : styles.button}
+          `}
           onClick={onClick}
         >
           {text}

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 
@@ -7,10 +7,38 @@ import styles from './Header.module.scss';
 import Dropwdown from '../dropdown/Dropdown';
 import Icon from '../Icon/Icon';
 import SideDrawer from '../sideDrawer/SideDrawer';
+import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
+import { getProductById } from '@/helpers/productFunctions';
+import { CartProduct } from '@/helpers/types';
+import { setAllItemsToCart } from '@/store/cartSlice';
 
 const Header = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const { data } = useSession();
+  const { items, itemTypeCount, total } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    let cartItems = JSON.parse(localStorage.getItem('furnyCart')!);
+    const allItems: CartProduct[] = [];
+
+    if (cartItems && cartItems.length > 0) {
+      for (let i = 0; i < cartItems.length; i++) {
+        const product = getProductById({ id: cartItems[i].id });
+        allItems.push({
+          id: product.id,
+          product_name: product.product_name,
+          image: product.image,
+          price: product.price,
+          discount: product.discount,
+          quantity: cartItems[i].quantity,
+        });
+      }
+      dispatch(
+        setAllItemsToCart({ products: allItems, count: cartItems.length })
+      );
+    }
+  }, []);
 
   const closeDrawer = () => {
     setOpenDrawer(false);
@@ -45,7 +73,7 @@ const Header = () => {
               color="black"
             />
             <span className="rounded bg-rose-600 text-white font-semibold text-sm px-2">
-              0
+              {itemTypeCount}
             </span>
           </div>
 

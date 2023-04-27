@@ -69,7 +69,7 @@ const ProductContainer = ({ product, similars }: ProductContainer) => {
             madeIn={madeIn}
           />
 
-          <ProductActions />
+          <ProductActions pId={id} />
         </div>
       </div>
 
