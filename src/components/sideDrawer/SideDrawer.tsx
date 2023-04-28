@@ -13,13 +13,13 @@ import {
 } from '@/helpers/productFunctions';
 import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
 import { removeItem, updateItem } from '@/store/cartSlice';
+import { closeDrawer } from '@/store/sideDrawerSlice';
 
 interface SideDrawerProps {
   isOpen: boolean;
-  closeDrawer?: () => void;
 }
 
-const SideDrawer = ({ isOpen, closeDrawer }: SideDrawerProps) => {
+const SideDrawer = ({ isOpen }: SideDrawerProps) => {
   const [isContentVisible, setIsContentVisible] = useState(false);
   const dispatch = useAppDispatch();
   const { items, itemTypeCount, total } = useAppSelector((state) => state.cart);
@@ -49,7 +49,7 @@ const SideDrawer = ({ isOpen, closeDrawer }: SideDrawerProps) => {
     <>
       <div
         className={`absolute ${styles['drawer-overlay']}`}
-        onClick={closeDrawer}
+        onClick={() => dispatch(closeDrawer())}
       />
 
       <div
@@ -65,7 +65,7 @@ const SideDrawer = ({ isOpen, closeDrawer }: SideDrawerProps) => {
                   {itemTypeCount}
                 </span>
               </div>
-              <span onClick={closeDrawer}>
+              <span onClick={() => dispatch(closeDrawer())}>
                 <Icon
                   name="GrClose"
                   color="black"

@@ -11,12 +11,13 @@ import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
 import { getProductById } from '@/helpers/productFunctions';
 import { CartProduct } from '@/helpers/types';
 import { setAllItemsToCart } from '@/store/cartSlice';
+import { openDrawer, closeDrawer } from '@/store/sideDrawerSlice';
 
 const Header = () => {
-  const [openDrawer, setOpenDrawer] = useState(false);
   const { data } = useSession();
-  const { items, itemTypeCount, total } = useAppSelector((state) => state.cart);
+  const { itemTypeCount } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+  const { isOpen } = useAppSelector((state) => state.drawer);
 
   useEffect(() => {
     let cartItems = JSON.parse(localStorage.getItem('furnyCart')!);
@@ -40,8 +41,15 @@ const Header = () => {
     }
   }, []);
 
-  const closeDrawer = () => {
-    setOpenDrawer(false);
+  useEffect(() => {
+    console.log(isOpen);
+    if (isOpen) document.body.classList.add('stop-scrolling');
+    else document.body.classList.remove('stop-scrolling');
+  }, [isOpen]);
+
+  const handleToggleDrawer = () => {
+    if (isOpen) dispatch(closeDrawer());
+    else dispatch(openDrawer());
   };
 
   return (
@@ -65,7 +73,7 @@ const Header = () => {
           />
           <div
             className="flex items-center gap-1 cursor-pointer"
-            onClick={() => setOpenDrawer(true)}
+            onClick={handleToggleDrawer}
           >
             <Icon
               name="MdShoppingCart"
@@ -89,9 +97,7 @@ const Header = () => {
         </div>
       </div>
 
-      {openDrawer && (
-        <SideDrawer isOpen={openDrawer} closeDrawer={closeDrawer} />
-      )}
+      {isOpen && <SideDrawer isOpen={isOpen} />}
       <div
         className="flex justify-center items-center gap-4 md:gap-10 mt-3 
         text-gray-400 text-sm md:text-lg font-semibold py-4"
