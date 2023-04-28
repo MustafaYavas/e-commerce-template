@@ -2,6 +2,31 @@
   height: 90% !important;
 }
 
+.two {
+  top: 130px;
+  left: 100px;
+  z-index: 10;
+
+  &:hover {
+    z-index: 11;
+    scale: 1.25;
+    transition: 0.5s;
+  }
+}
+
+.three {
+  top: 200px;
+  left: 300px;
+  transform: rotate(45deg);
+
+  &:hover {
+    z-index: 11;
+    transform: rotate(0deg);
+    scale: 1.25;
+    transition: 0.5s;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .section-one-container,
   .section-two-container {
@@ -13,5 +38,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-two-img {
+    height: 275px !important;
+    width: 275px !important;
+    position: absolute;
+  }
+
+  .one {
+    top: 200px;
+    left: -100px;
+    transform: rotate(-45deg);
+
+    &:hover {
+      z-index: 11;
+      transform: rotate(0deg);
+      scale: 1.25;
+      transition: 0.5s;
+    }
   }
 }

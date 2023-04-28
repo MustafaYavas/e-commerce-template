@@ -9,7 +9,7 @@ const DiscountPrice = ({ discount, price, className }: DiscountPriceProps) => {
     <div className={className}>
       {discount ? (
         <div>
-          <span className="line-through text-slate-300 mr-4">
+          <span className="line-through text-slate-400 mr-4">
             $ {price} USD
           </span>
           <span className="text-red-600">$ {price} USD</span>

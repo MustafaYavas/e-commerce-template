@@ -2,7 +2,6 @@
 import Icon from '../Icon/Icon';
 import styles from './SideDrawer.module.scss';
 import { useEffect, useState } from 'react';
-import Button from '../button/Button';
 import { CartProduct } from '@/helpers/types';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -134,12 +133,15 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
               ) : (
                 <>
                   <p className="text-xl font-semibold">Your cart is empty.</p>
-                  <Button
-                    isLink={true}
+
+                  <Link
                     href="/store"
-                    isFill={true}
-                    text={<span>VISIT STORE</span>}
-                  />
+                    className="w-1/4 block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
+                    rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
+                    onClick={() => {}}
+                  >
+                    VISIT STORE
+                  </Link>
                 </>
               )}
             </div>
@@ -157,10 +159,8 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
 
                 <Link
                   href="/payment"
-                  className="w-100 block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
-                rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
-                  style={{ width: '100%' }}
-                  onClick={() => {}}
+                  className="w-full block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
+                  rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
                 >
                   CONTINUE TO CHECKOUT
                 </Link>

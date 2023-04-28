@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 
-import Button from '../button/Button';
 import styles from './ProductInfos.module.scss';
 import { getProductById, setLocalStorage } from '@/helpers/productFunctions';
 import { useAppDispatch } from '@/helpers/reduxHooks';
@@ -44,13 +43,14 @@ const ProductActions = ({ pId }: ProductActionsProps) => {
         className="rounded"
         onChange={(e) => setValue(e.target.value)}
       />
-      <Button
-        isLink={false}
-        isFill={true}
-        className="w-full rounded md:text-xl tracking-wider"
-        text={<span>ADD TO CART</span>}
+
+      <button
+        className="w-full block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
+        rounded-sm py-1 md:py-2 text-sm md:text-lg"
         onClick={handleAddToCart}
-      />
+      >
+        ADD TO CART
+      </button>
     </div>
   );
 };

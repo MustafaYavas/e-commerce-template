@@ -16,7 +16,7 @@ const ProductCard = ({ productName, image, price, discount }: CardProps) => {
   return (
     <Link
       href={`/product/${createLinkFromName(productName)}`}
-      className={`card ${styles['product-card-container']} mb-5 md:mb-0`}
+      className={`${styles['product-card-container']} mb-5 md:mb-10`}
     >
       <Image
         src={image}
@@ -27,8 +27,8 @@ const ProductCard = ({ productName, image, price, discount }: CardProps) => {
         className="card-img"
       />
       <div className="card-body">
-        <h2 className="card-title text-lg">{productName}</h2>
-        <div className="card-actions justify-start text-lg font-semibold">
+        <h2 className="text-lg md:text-xl font-medium">{productName}</h2>
+        <div className="justify-start text-lg font-semibold">
           <DiscountPrice discount={discount!} price={price} />
         </div>
         {discount && (

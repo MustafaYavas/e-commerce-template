@@ -42,7 +42,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    console.log(isOpen);
     if (isOpen) document.body.classList.add('stop-scrolling');
     else document.body.classList.remove('stop-scrolling');
   }, [isOpen]);

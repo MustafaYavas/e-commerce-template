@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 
 import ImageWithText from '@/components/imageWithText/ImageWithText';
 import Input from '@/components/input/Input';
-import Button from '@/components/button/Button';
 import { setError } from '@/helpers/error';
 import Loading from '@/components/loading/Loading';
 import Icon from '@/components/Icon/Icon';
@@ -127,27 +126,25 @@ const page = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <Button
-            isLink={false}
-            isFill={true}
-            text={<span>GO</span>}
-            className="text-lg font-medium w-1/2 px-5 py-2"
-          />
+          <button
+            className="block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
+            rounded-sm py-1 md:py-2 text-lg font-medium w-1/2"
+          >
+            GO
+          </button>
         </form>
 
-        <div className="w-full text-center mt-10">
-          <Button
-            isLink={false}
-            isFill={false}
-            text={
-              <span className="flex justify-center items-center gap-3">
-                <Icon name="FcGoogle" />
-                LOGIN WITH GOOGLE
-              </span>
-            }
+        <div className="w-full flex justify-center items-center mt-10">
+          <button
+            className="block text-center bg-rose-600 hover:bg-rose-500
+            text-white rounded-sm py-1 md:py-2 text-lg font-medium w-1/2"
             onClick={() => signIn('google')}
-            className="text-lg font-medium w-1/2 px-5 py-2"
-          />
+          >
+            <span className="flex justify-center items-center gap-3">
+              <Icon name="FcGoogle" className="bg-white rounded-full" />
+              LOGIN WITH GOOGLE
+            </span>
+          </button>
         </div>
       </div>
 

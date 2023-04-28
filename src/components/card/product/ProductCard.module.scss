@@ -1,14 +1,16 @@
 .product-card-container {
   overflow: hidden;
+  position: relative;
+  border-radius: 10px;
 
   &:hover {
     background-color: rgb(236, 236, 236);
-
-    -webkit-box-shadow: 15px 15px 10px 0px rgba(224, 224, 224, 1);
-    -moz-box-shadow: 15px 15px 10px 0px rgba(224, 224, 224, 1);
-    box-shadow: 15px 15px 10px 0px rgba(224, 224, 224, 1);
-    scale: 1.03;
+    scale: 1.01;
     transition: 0.25s;
+  }
+
+  .card-body {
+    padding: 1rem 0;
   }
 
   .sale-badge {
