@@ -157,7 +157,7 @@ const page = () => {
         />
       </div>
 
-      {isLoading && <Loading />}
+      {(isLoading || session?.status === 'loading') && <Loading />}
       <ToastContainer />
     </div>
   );

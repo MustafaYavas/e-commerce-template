@@ -13,16 +13,18 @@ import {
 import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
 import { removeItem, updateItem } from '@/store/cartSlice';
 import { closeDrawer } from '@/store/sideDrawerSlice';
+import { useSession } from 'next-auth/react';
 
 interface SideDrawerProps {
   isOpen: boolean;
 }
 
 const SideDrawer = ({ isOpen }: SideDrawerProps) => {
+  const { data } = useSession();
   const [isContentVisible, setIsContentVisible] = useState(false);
   const dispatch = useAppDispatch();
   const { items, itemTypeCount, total } = useAppSelector((state) => state.cart);
-
+  console.log(data);
   useEffect(() => {
     setTimeout(() => {
       setIsContentVisible(true);
@@ -85,7 +87,8 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
                 items.map((item) => (
                   <div
                     key={item.id}
-                    className={`w-full flex justify-between items-center pr-2 md:my-5 ${styles['drawer-cart-item']}`}
+                    className={`w-full flex justify-between items-center pr-2 my-1 md:my-5 
+                    ${styles['drawer-cart-item']}`}
                   >
                     <div
                       className={`flex items-start md:items-center justify-between md:justify-start h-full gap-5 
@@ -138,7 +141,6 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
                     href="/store"
                     className="w-1/4 block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
                     rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
-                    onClick={() => {}}
                   >
                     VISIT STORE
                   </Link>
@@ -146,26 +148,46 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
               )}
             </div>
 
-            {items.length > 0 && (
-              <div className="pr-6 mt-5 border-t border-slate-200 w-100">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm md:text-lg font-medium">
-                    Subtotal
-                  </span>
-                  <span className="text-sm md:text-lg text-slate-700">
-                    $ {total} USD
-                  </span>
-                </div>
+            <div className="md:pr-6 border-t border-slate-200 w-100">
+              {items.length > 0 && data && (
+                <>
+                  <div className="flex justify-between items-center mt-5">
+                    <span className="text-sm md:text-lg font-medium">
+                      Subtotal
+                    </span>
+                    <span className="text-sm md:text-lg text-slate-700">
+                      $ {total} USD
+                    </span>
+                  </div>
 
-                <Link
-                  href="/payment"
-                  className="w-full block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
-                  rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
-                >
-                  CONTINUE TO CHECKOUT
-                </Link>
-              </div>
-            )}
+                  <Link
+                    href="/payment"
+                    className="w-full block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
+                    rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
+                    onClick={() => dispatch(closeDrawer())}
+                  >
+                    CONTINUE TO CHECKOUT
+                  </Link>
+                </>
+              )}
+              {!data && (
+                <div className="text-center mt-1 md:mt-5">
+                  <p className="text-sm md:text-xl text-rose-600">
+                    You are not logged in yet.
+                  </p>
+                  <span className="text-sm md:text-lg font-light text-rose-600">
+                    You must be logged in to proceed to the payment stage.
+                  </span>
+                  <Link
+                    href="/login"
+                    className="w-full block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
+                    rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
+                  >
+                    GO & LOGIN
+                  </Link>
+                </div>
+              )}
+            </div>
           </>
         )}
       </div>
