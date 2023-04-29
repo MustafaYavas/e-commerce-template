@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { CartProduct } from '@/helpers/types';
-import styles from './PaymentItem.module.scss';
+import styles from './Payment.module.scss';
 import Link from 'next/link';
 import { createLinkFromName } from '@/helpers/general';
 import Icon from '../Icon/Icon';
