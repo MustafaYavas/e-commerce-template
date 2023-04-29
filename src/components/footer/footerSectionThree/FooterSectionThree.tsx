@@ -64,7 +64,7 @@ const FooterSectionThree = () => {
           <List
             title="Company"
             items={['About', 'Blog', 'Contact Us', 'FAQ', 'Terms & Conditions']}
-            href={['about', 'blog', 'contact', 'faq', 'legal']}
+            href={['/', '/', '/', '/', '/']}
           />
 
           <List

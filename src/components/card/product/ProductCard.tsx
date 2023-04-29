@@ -8,7 +8,7 @@ import { createLinkFromName } from '@/helpers/general';
 interface CardProps {
   productName: string;
   image: string;
-  price: string;
+  price: number;
   discount?: boolean;
 }
 

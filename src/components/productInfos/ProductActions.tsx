@@ -12,24 +12,29 @@ interface ProductActionsProps {
 
 const ProductActions = ({ pId }: ProductActionsProps) => {
   const [value, setValue] = useState('1');
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
 
   const handleAddToCart = () => {
-    const product = getProductById({ id: pId, quantity: parseInt(value) });
-    const { id, product_name, image, price, discount } = product;
-    setLocalStorage({ id: pId, quantity: parseInt(value) });
-    dispatch(
-      addItemToCart({
-        product: {
-          id,
-          product_name,
-          image,
-          price,
-          discount,
-          quantity: parseInt(value),
-        },
-      })
-    );
+    setIsLoading(true);
+    setTimeout(() => {
+      const product = getProductById({ id: pId, quantity: parseInt(value) });
+      const { id, product_name, image, price, discount } = product;
+      setLocalStorage({ id: pId, quantity: parseInt(value) });
+      dispatch(
+        addItemToCart({
+          product: {
+            id,
+            product_name,
+            image,
+            price,
+            discount,
+            quantity: parseInt(value),
+          },
+        })
+      );
+      setIsLoading(false);
+    }, 500);
   };
 
   return (
@@ -49,7 +54,7 @@ const ProductActions = ({ pId }: ProductActionsProps) => {
         rounded-sm py-1 md:py-2 text-sm md:text-lg"
         onClick={handleAddToCart}
       >
-        ADD TO CART
+        {isLoading ? 'ADDING...' : 'ADD TO CART'}
       </button>
     </div>
   );

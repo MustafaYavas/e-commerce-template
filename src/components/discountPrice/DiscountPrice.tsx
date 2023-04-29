@@ -1,6 +1,6 @@
 interface DiscountPriceProps {
   discount: boolean;
-  price: string;
+  price: number;
   className?: string;
 }
 

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 
 import styles from './Header.module.scss';
-import Dropwdown from '../dropdown/Dropdown';
+import Dropdown from '../dropdown/Dropdown';
 import Icon from '../Icon/Icon';
 import SideDrawer from '../sideDrawer/SideDrawer';
 import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
@@ -52,14 +52,14 @@ const Header = () => {
   };
 
   return (
-    <div className={` ${styles['header-container']}`}>
+    <div className={`${styles['header-container']}`}>
       <div className="container mx-auto px-5 md:px-10 flex justify-between items-center ">
-        <Dropwdown
+        <Dropdown
           toggle="GiHamburgerMenu"
           className={`cursor-pointer mt-1 md:mt-0 ${styles['header-icons']}`}
           tab={0}
           items={['Blog', 'About', 'Contact', 'FAQ', 'Terms & Conditions']}
-          href={['blog', 'about', 'contact', 'faq', 'legal']}
+          href={['/', '/', '/', '/', '/']}
         />
         <h1 className="text-2xl md:text-3xl ml-2 md:ml-5 font-bold tracking-widest">
           <Link href="/">FURNY</Link>
@@ -99,7 +99,7 @@ const Header = () => {
       {isOpen && <SideDrawer isOpen={isOpen} />}
       <div
         className="flex justify-center items-center gap-4 md:gap-10 mt-3 
-        text-gray-400 text-sm md:text-lg font-semibold py-4"
+        text-gray-400 text-sm md:text-lg font-semibold py-4 sticky top-0"
       >
         <Link href="/store" className="hover:text-black">
           All

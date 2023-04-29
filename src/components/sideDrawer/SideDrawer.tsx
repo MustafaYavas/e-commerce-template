@@ -140,6 +140,7 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
                     href="/store"
                     className="w-1/4 block text-center bg-zinc-900 hover:bg-zinc-800 text-white 
                     rounded-sm md:mt-2 py-1 md:py-2 text-sm md:text-lg"
+                    onClick={() => dispatch(closeDrawer())}
                   >
                     VISIT STORE
                   </Link>

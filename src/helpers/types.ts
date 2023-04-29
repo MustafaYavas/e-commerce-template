@@ -3,7 +3,7 @@ export interface Product {
   product_name: string;
   image: string;
   category: string;
-  price: string;
+  price: number;
   discount: boolean;
   weight: string;
   materials: string[];
@@ -16,7 +16,7 @@ export interface CartProduct {
   id: number;
   product_name: string;
   image: string;
-  price: string;
+  price: number;
   discount: boolean;
   quantity: number;
 }

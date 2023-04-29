@@ -59,6 +59,7 @@
 
 .stop-scrolling {
   overflow-y: hidden;
+  padding-right: 5px;
 }
 
 @media screen and (max-width: 768px) {

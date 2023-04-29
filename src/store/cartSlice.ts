@@ -51,7 +51,7 @@ const cartSlice = createSlice({
 
       state.total = 0;
       state.items.map((item) => {
-        state.total += parseInt(item.price) * item.quantity;
+        state.total += item.price * item.quantity;
       });
     },
 
@@ -63,8 +63,7 @@ const cartSlice = createSlice({
       state.items = products;
       state.itemTypeCount = count;
       for (let i = 0; i < state.items.length; i++) {
-        state.total +=
-          parseInt(state.items[i].price) * state.items[i].quantity!;
+        state.total += state.items[i].price * state.items[i].quantity!;
       }
     },
 
@@ -85,7 +84,7 @@ const cartSlice = createSlice({
       state.items = newItems;
       state.total = 0;
       state.items.map((item) => {
-        state.total += parseInt(item.price) * item.quantity;
+        state.total += item.price * item.quantity;
       });
     },
 
@@ -97,7 +96,7 @@ const cartSlice = createSlice({
       state.itemTypeCount -= 1;
       state.total = 0;
       state.items.map((item) => {
-        state.total += parseInt(item.price) * item.quantity;
+        state.total += item.price * item.quantity;
       });
     },
 

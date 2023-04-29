@@ -37,7 +37,8 @@ const PaymentItems = ({ item }: PaymentItemsProps) => {
           href={`/product/${createLinkFromName(item.product_name)}`}
           className="font-medium"
         >
-          {item.product_name}
+          {item.product_name}{' '}
+          <span className="text-slate-400 font-thin">({item.quantity})</span>
         </Link>
       </div>
 
@@ -48,7 +49,7 @@ const PaymentItems = ({ item }: PaymentItemsProps) => {
         >
           <Icon name="GrClose" size={16} className="cursor-pointer" />
         </span>
-        <p>{item.price} $</p>
+        <p>{item.price * item.quantity} $</p>
       </div>
     </div>
   );
