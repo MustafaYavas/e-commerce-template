@@ -66,3 +66,7 @@ export const deleteItemFromLocalStorage = (id: number, name: string) => {
 
   localStorage.setItem(name, JSON.stringify(newItems));
 };
+
+export const clearLocalStorage = (name: string) => {
+  localStorage.removeItem(name);
+};

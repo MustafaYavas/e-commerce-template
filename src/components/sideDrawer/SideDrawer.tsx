@@ -24,7 +24,7 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
   const [isContentVisible, setIsContentVisible] = useState(false);
   const dispatch = useAppDispatch();
   const { items, itemTypeCount, total } = useAppSelector((state) => state.cart);
-  console.log(data);
+
   useEffect(() => {
     setTimeout(() => {
       setIsContentVisible(true);
@@ -37,7 +37,6 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
       quantity: parseInt(e.target.value),
       fromCart: true,
     });
-    // dispatch(setCart({ product: item, value: e.target.value }));
     dispatch(updateItem({ product: item, quantity: e.target.value }));
   };
 

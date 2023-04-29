@@ -6,6 +6,7 @@ import {
   AiOutlineInstagram,
   AiFillCaretRight,
   AiOutlineLogout,
+  AiOutlineCheck,
 } from 'react-icons/ai';
 import { MdShoppingCart } from 'react-icons/md';
 import { GrClose } from 'react-icons/gr';
@@ -128,6 +129,14 @@ const Icon = ({ name, size, className, color }: IconProps) => {
   } else if (name === 'FcGoogle') {
     return (
       <FcGoogle
+        className={className}
+        size={size}
+        color={color ? color : 'black'}
+      />
+    );
+  } else if (name === 'AiOutlineCheck') {
+    return (
+      <AiOutlineCheck
         className={className}
         size={size}
         color={color ? color : 'black'}

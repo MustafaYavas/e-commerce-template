@@ -26,7 +26,7 @@ const ProductCard = ({ productName, image, price, discount }: CardProps) => {
         sizes="100vw"
         className="card-img"
       />
-      <div className="card-body">
+      <div className={styles['card-body']}>
         <h2 className="text-lg md:text-xl font-medium">{productName}</h2>
         <div className="justify-start text-lg font-semibold">
           <DiscountPrice discount={discount!} price={price} />
