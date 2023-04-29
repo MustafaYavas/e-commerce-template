@@ -1,6 +1,7 @@
 import products from '../../../../products.json';
 import { Product } from '@/helpers/types';
 import ProductContainer from '@/containers/ProductContainer';
+import { notFound } from 'next/navigation';
 
 const page = ({ params }: any) => {
   let newArr = params.productName.split('-');
@@ -15,6 +16,8 @@ const page = ({ params }: any) => {
   products.map((prod) => {
     if (prod.product_name.trim() === productName.trim()) product = prod;
   });
+
+  if (Object.keys(product).length === 0) notFound();
 
   products.map((prod) => {
     if (product && prod.category === product.category && prod.id !== product.id)

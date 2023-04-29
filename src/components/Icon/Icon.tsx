@@ -13,6 +13,7 @@ import { GrClose } from 'react-icons/gr';
 import { FaShippingFast, FaHome } from 'react-icons/fa';
 import { BsPinterest } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
+import { RiEmotionUnhappyLine } from 'react-icons/ri';
 
 interface IconProps {
   name: string;
@@ -137,6 +138,14 @@ const Icon = ({ name, size, className, color }: IconProps) => {
   } else if (name === 'AiOutlineCheck') {
     return (
       <AiOutlineCheck
+        className={className}
+        size={size}
+        color={color ? color : 'black'}
+      />
+    );
+  } else if (name === 'RiEmotionUnhappyLine') {
+    return (
+      <RiEmotionUnhappyLine
         className={className}
         size={size}
         color={color ? color : 'black'}
