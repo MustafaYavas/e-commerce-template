@@ -20,7 +20,7 @@ const SectionTwo = ({ title }: SectionTwoProps) => {
             perferendis fugiat?
           </span>
         </p>
-        <Link href="/about" className="text-lg md:text-xl font-medium">
+        <Link href="/" className="text-lg md:text-xl font-medium">
           Learn more
         </Link>
       </div>

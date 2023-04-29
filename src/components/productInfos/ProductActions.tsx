@@ -5,6 +5,8 @@ import styles from './ProductInfos.module.scss';
 import { getProductById, setLocalStorage } from '@/helpers/productFunctions';
 import { useAppDispatch } from '@/helpers/reduxHooks';
 import { addItemToCart } from '@/store/cartSlice';
+import { setSuccessAlert } from '@/helpers/alert';
+import { ToastContainer } from 'react-toastify';
 
 interface ProductActionsProps {
   pId: number;
@@ -34,6 +36,7 @@ const ProductActions = ({ pId }: ProductActionsProps) => {
         })
       );
       setIsLoading(false);
+      setSuccessAlert('Item added to cart!', 2000);
     }, 500);
   };
 
@@ -56,6 +59,7 @@ const ProductActions = ({ pId }: ProductActionsProps) => {
       >
         {isLoading ? 'ADDING...' : 'ADD TO CART'}
       </button>
+      <ToastContainer />
     </div>
   );
 };

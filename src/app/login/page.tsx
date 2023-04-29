@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import ImageWithText from '@/components/imageWithText/ImageWithText';
 import Input from '@/components/input/Input';
-import { setError } from '@/helpers/error';
+import { setErrorAlert } from '@/helpers/alert';
 import Loading from '@/components/loading/Loading';
 import Icon from '@/components/Icon/Icon';
 
@@ -49,11 +49,11 @@ const page = () => {
     e.preventDefault();
 
     if (email === '' || password === '' || (!isLogin && name === '')) {
-      setError('Inputs can not be left blank!', 3000);
+      setErrorAlert('Inputs can not be left blank!', 3000);
       return;
     }
     if (password.length < 5) {
-      setError('Password must be at least 5 letters!', 3000);
+      setErrorAlert('Password must be at least 5 letters!', 3000);
       return;
     }
 
@@ -78,7 +78,7 @@ const page = () => {
         })
           .then((res) => {
             if (res!.ok) router.replace('/');
-            else setError(res!.error!, 5000);
+            else setErrorAlert(res!.error!, 5000);
           })
           .catch((error) => {
             throw new Error(error);

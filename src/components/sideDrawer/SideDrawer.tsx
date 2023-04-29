@@ -14,6 +14,8 @@ import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
 import { removeItem, updateItem } from '@/store/cartSlice';
 import { closeDrawer } from '@/store/sideDrawerSlice';
 import { useSession } from 'next-auth/react';
+import { ToastContainer } from 'react-toastify';
+import { setSuccessAlert } from '@/helpers/alert';
 
 interface SideDrawerProps {
   isOpen: boolean;
@@ -43,6 +45,7 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
   const handleRemoveItem = (itemId: number) => {
     dispatch(removeItem({ id: itemId }));
     deleteItemFromLocalStorage(itemId, 'furnyCart');
+    setSuccessAlert('Item removed from the cart!', 2000);
   };
 
   return (
@@ -191,6 +194,7 @@ const SideDrawer = ({ isOpen }: SideDrawerProps) => {
           </>
         )}
       </div>
+      <ToastContainer />
     </>
   );
 };
