@@ -20,7 +20,7 @@ const page = () => {
   const router = useRouter();
   const session = useSession();
 
-  if (session?.status === 'authenticated') router.replace('/payment');
+  if (session?.status === 'authenticated') router.replace('/');
 
   const imageOverElement = () => {
     return (
