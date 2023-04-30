@@ -1,4 +1,7 @@
+'use client';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import Aos from 'aos';
 
 import styles from './CargoCard.module.scss';
 import CardTitle from '../CardTitle';
@@ -11,11 +14,18 @@ interface CargoCard {
 }
 
 const CargoCard = ({ title, left, text }: CargoCard) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <div
       className={`text-center grid-two-reverse ${
         left ? 'card-over-up' : 'card-over-down'
       }`}
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-once="true"
     >
       <div className={`relative ${left ? 'order-2' : 'order-1'}`}>
         <Image

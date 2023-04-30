@@ -1,9 +1,12 @@
+'use client';
 import Image from 'next/image';
 
 import styles from './ProductCard.module.scss';
 import Link from 'next/link';
 import DiscountPrice from '@/components/discountPrice/DiscountPrice';
 import { createLinkFromName } from '@/helpers/general';
+import { useEffect } from 'react';
+import Aos from 'aos';
 
 interface CardProps {
   productName: string;
@@ -13,10 +16,16 @@ interface CardProps {
 }
 
 const ProductCard = ({ productName, image, price, discount }: CardProps) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <Link
       href={`/product/${createLinkFromName(productName)}`}
       className={`${styles['product-card-container']} mb-5 md:mb-10`}
+      data-aos="flip-left"
+      data-aos-once="true"
     >
       <Image
         src={image}

@@ -1,7 +1,10 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import Aos from 'aos';
 
 import CardTitle from '../CardTitle';
+import { useEffect } from 'react';
 
 interface CategoryCardProps {
   categoryName: string;
@@ -9,10 +12,16 @@ interface CategoryCardProps {
 }
 
 const CategoryCard = ({ categoryName, left }: CategoryCardProps) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
     <Link
       href={`/store/${categoryName.toLowerCase()}`}
       className="text-center grid grid-cols-2 md:grid-cols-1 card-over-down"
+      data-aos="flip-up"
+      data-aos-once="true"
     >
       <CardTitle
         title={categoryName}

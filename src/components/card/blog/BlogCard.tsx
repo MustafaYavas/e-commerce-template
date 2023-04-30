@@ -1,6 +1,9 @@
+'use client';
 import Image from 'next/image';
+import Aos from 'aos';
 
 import CardText from '../CardText';
+import { useEffect } from 'react';
 
 interface BlogCardProps {
   date: string;
@@ -9,8 +12,16 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ date, text, className }: BlogCardProps) => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
   return (
-    <div className={`text-start grid-two-reverse cursor-pointer ${className}`}>
+    <div
+      className={`text-start grid-two-reverse cursor-pointer ${className}`}
+      data-aos="zoom-out"
+      data-aos-once="true"
+    >
       <div className="relative">
         <Image
           src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"

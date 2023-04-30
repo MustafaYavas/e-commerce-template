@@ -1,6 +1,7 @@
 import Providers from '@/components/Providers';
 import { Akshar } from 'next/font/google';
 import 'react-toastify/dist/ReactToastify.css';
+import 'aos/dist/aos.css';
 
 import '../styles/globals.css';
 
