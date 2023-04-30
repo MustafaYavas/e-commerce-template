@@ -16,6 +16,7 @@ const page = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoginAfterSignup, setIsLoginAfterSignup] = useState(false);
   const router = useRouter();
   const session = useSession();
 
@@ -64,7 +65,12 @@ const page = () => {
           method: 'POST',
           body: JSON.stringify({ name, email, password }),
         });
-        router.replace('/');
+        setIsLoginAfterSignup(true);
+        setName('');
+        setEmail('');
+        setPassword('');
+        setIsLogin(true);
+        router.replace('/login');
       } catch (error) {
         throw new Error('Something went wrong while signing up!');
       }
@@ -84,6 +90,7 @@ const page = () => {
             throw new Error(error);
           })
           .finally(() => {
+            setIsLoginAfterSignup(false);
             setIsLoading(false);
           });
       } catch (error) {
@@ -102,6 +109,11 @@ const page = () => {
           <h4 className="text-xl md:text-4xl mb-10">
             {isLogin ? 'Welcome Back' : 'Signup'}
           </h4>
+          {isLoginAfterSignup && (
+            <p className="text-md text-green-500">
+              Your account has been successfully created. You can login now
+            </p>
+          )}
           {!isLogin && (
             <Input
               labelText="Name"
