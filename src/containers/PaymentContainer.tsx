@@ -1,13 +1,13 @@
+'use client';
 import Icon from '@/components/Icon/Icon';
 import PaymentItems from '@/components/payment/PaymentItems';
 import Sidebar from '@/components/payment/Sidebar';
+import { useAppSelector } from '@/helpers/reduxHooks';
 import { CartProduct } from '@/helpers/types';
 
-interface PaymentContainerProps {
-  items: CartProduct[];
-}
+const PaymentContainer = () => {
+  const { items } = useAppSelector((state) => state.cart);
 
-const PaymentContainer = ({ items }: PaymentContainerProps) => {
   return (
     <div>
       {items.length > 0 ? (

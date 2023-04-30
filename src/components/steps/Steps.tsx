@@ -7,10 +7,6 @@ interface StepsProps {
 }
 
 const Steps = ({ product }: StepsProps) => {
-  if (Object.keys(product).length === 0) {
-    // throw error
-  }
-
   return (
     <div className="flex justify-center md:justify-start items-center gap-1">
       <Link href="/" className="text-base md:text-lg">

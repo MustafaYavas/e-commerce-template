@@ -1,9 +1,23 @@
 import products from '../../../../products.json';
 import { Product } from '@/helpers/types';
 import StoreContainer from '@/containers/StoreContainer';
-import { notFound } from 'next/navigation';
 
-const page = ({ params }: any) => {
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+
+type CategoryPageProps = {
+  params: { category: string };
+};
+
+export async function generateMetadata({
+  params,
+}: CategoryPageProps): Promise<Metadata> {
+  return {
+    title: params.category.charAt(0).toUpperCase() + params.category.slice(1),
+  };
+}
+
+const page = ({ params }: CategoryPageProps) => {
   let allProducts: Product[] = [];
 
   if (Object.keys(params).length > 0) {

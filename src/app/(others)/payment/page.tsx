@@ -1,13 +1,14 @@
-'use client';
 import PaymentContainer from '@/containers/PaymentContainer';
-import { useAppSelector } from '@/helpers/reduxHooks';
+import { CSS_CLASS } from '@/helpers/cssConstant';
+
+export const metadata = {
+  title: 'Payment',
+};
 
 const page = () => {
-  const { items, total } = useAppSelector((state) => state.cart);
-
   return (
-    <div className="container mx-auto px-5 md:px-10">
-      <PaymentContainer items={items} />
+    <div className={CSS_CLASS.CONTAINER}>
+      <PaymentContainer />
     </div>
   );
 };
