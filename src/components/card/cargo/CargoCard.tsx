@@ -11,9 +11,10 @@ interface CargoCard {
   title: string;
   left?: boolean;
   text: string;
+  step: string;
 }
 
-const CargoCard = ({ title, left, text }: CargoCard) => {
+const CargoCard = ({ title, left, text, step }: CargoCard) => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -36,7 +37,7 @@ const CargoCard = ({ title, left, text }: CargoCard) => {
           sizes="100vw"
           className="card-img card-img-radius"
         />
-        <div className={`${styles['cargo-badge']} bg-rose-600`}>1.</div>
+        <div className={`${styles['cargo-badge']} bg-rose-600`}>{step}.</div>
       </div>
 
       <div
