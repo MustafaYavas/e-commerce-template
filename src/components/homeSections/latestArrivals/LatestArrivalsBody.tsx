@@ -1,7 +1,7 @@
 import ProductCard from '@/components/card/product/ProductCard';
 import products from '../../../products.json';
 
-const SectionOneBody = () => {
+const LatestArrivalsBody = () => {
   return (
     <div className="grid-three">
       {products.slice(0, 3).map((prod) => (
@@ -17,4 +17,4 @@ const SectionOneBody = () => {
   );
 };
 
-export default SectionOneBody;
+export default LatestArrivalsBody;

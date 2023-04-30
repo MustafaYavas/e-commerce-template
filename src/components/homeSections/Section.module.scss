@@ -1,4 +1,4 @@
-.section-two-img {
+.beautify-space-img {
   height: 90% !important;
 }
 
@@ -28,13 +28,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .section-one-container,
-  .section-two-container {
+  .latest-arrivals-container,
+  .beautify-space-container {
     min-height: 100vh;
     border-bottom: 1px solid #e2e8f0;
   }
 
-  .section-one-container {
+  .latest-arrivals-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,7 +42,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .section-two-img {
+  .beautify-space-img {
     height: 275px !important;
     width: 275px !important;
     position: absolute;

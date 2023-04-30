@@ -1,10 +1,11 @@
 import Hero from '@/components/Hero/Hero';
-import SectionOne from '@/components/homeSections/sectionOne/SectionOne';
-import SectionTwo from '@/components/homeSections/sectionTwo/SectionTwo';
-import SectionThree from '@/components/homeSections/sectionThree/SectionThree';
-import SectionFour from '@/components/homeSections/sectionFour/SectionFour';
-import SectionFive from '@/components/homeSections/sectionFive/SectionFive';
+import LatestArrivals from '@/components/homeSections/latestArrivals/LatestArrivals';
+import BeautifySpace from '@/components/homeSections/beautifySpace/BeautifySpace';
+import BrowseRange from '@/components/homeSections/browseRange/BrowseRange';
+import HowWorks from '@/components/homeSections/howWorks/HowWorks';
+import Blog from '@/components/homeSections/blog/Blog';
 import ImageWithText from '@/components/imageWithText/ImageWithText';
+import FullWidthSection from '@/components/fullWidthSection/FullWidthSection';
 
 const HomeContainer = () => {
   return (
@@ -16,13 +17,17 @@ const HomeContainer = () => {
         className="opacity-40"
       />
 
-      <div className="container mx-auto px-5 md:px-10">
-        <SectionOne title="Latest Arrivals" />
-        <SectionTwo title="Beautify your space" />
-        <SectionThree title="Browse the range" />
-        <SectionFour title="How it works" />
-        <SectionFive title="From our blog" />
-      </div>
+      <LatestArrivals title="Latest Arrivals" />
+      <BeautifySpace title="Beautify your space" />
+      <BrowseRange title="Browse the range" />
+      <FullWidthSection
+        image="/images/full1.avif"
+        mainText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est pariatur omnis labore. 
+          Voluptates tenetur accusantium est harum! Itaque, animi? Numquam!"
+        buttonText="Start Shopping"
+      />
+      <HowWorks title="How it works" />
+      <Blog title="From our blog" />
     </>
   );
 };

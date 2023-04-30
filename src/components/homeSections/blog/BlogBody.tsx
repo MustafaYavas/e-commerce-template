@@ -1,7 +1,7 @@
 import BlogCard from '@/components/card/blog/BlogCard';
 import { getDayAndNumber } from '@/helpers/date';
 
-const SectionFiveBody = () => {
+const BlogBody = () => {
   return (
     <div className="grid-three">
       <BlogCard
@@ -23,4 +23,4 @@ const SectionFiveBody = () => {
   );
 };
 
-export default SectionFiveBody;
+export default BlogBody;

@@ -1,6 +1,6 @@
 import CargoCard from '@/components/card/cargo/CargoCard';
 
-const SectionFourBody = () => {
+const HowWorksBody = () => {
   return (
     <div className="grid-three">
       <CargoCard
@@ -21,4 +21,4 @@ const SectionFourBody = () => {
   );
 };
 
-export default SectionFourBody;
+export default HowWorksBody;

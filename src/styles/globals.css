@@ -48,13 +48,13 @@
 }
 
 .card-over-up:hover {
-  transform: translateY(-10px);
-  transition: 0.25s;
+  transform: translateY(-10px) !important;
+  transition: 0.25s !important;
 }
 
 .card-over-down:hover {
-  transform: translateY(10px);
-  transition: 0.25s;
+  transform: translateY(10px) !important;
+  transition: 0.25s !important;
 }
 
 .stop-scrolling {

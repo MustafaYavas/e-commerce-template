@@ -8,10 +8,11 @@ import { useEffect } from 'react';
 
 interface CategoryCardProps {
   categoryName: string;
+  image: string;
   left?: boolean;
 }
 
-const CategoryCard = ({ categoryName, left }: CategoryCardProps) => {
+const CategoryCard = ({ categoryName, image, left }: CategoryCardProps) => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -31,7 +32,7 @@ const CategoryCard = ({ categoryName, left }: CategoryCardProps) => {
         tracking-widest flex justify-center items-center`}
       />
       <Image
-        src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
+        src={image}
         alt="latest"
         width="0"
         height="0"
