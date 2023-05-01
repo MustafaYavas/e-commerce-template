@@ -19,22 +19,23 @@ export async function generateMetadata({
 
 const page = ({ params }: CategoryPageProps) => {
   let allProducts: Product[] = [];
+  let categoryName = params.category;
 
   if (Object.keys(params).length > 0) {
-    if (params.category === 'sale')
+    if (categoryName === 'sale')
       allProducts = products.filter((prod) => prod.discount === true);
     else if (
-      params.category === 'dining' ||
-      params.category === 'living' ||
-      params.category === 'bedroom'
+      categoryName === 'dining' ||
+      categoryName === 'living' ||
+      categoryName === 'bedroom'
     )
       allProducts = products.filter(
-        (prod) => prod.category.toLowerCase() === params.category
+        (prod) => prod.category.toLowerCase() === categoryName
       );
     else notFound();
   } else allProducts = products;
 
-  return <StoreContainer products={allProducts} />;
+  return <StoreContainer products={allProducts} categoryName={categoryName} />;
 };
 
 export default page;

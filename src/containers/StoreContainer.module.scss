@@ -1,0 +1,12 @@
+.category-title {
+  color: white;
+  font-size: 72px;
+  font-weight: bold;
+  letter-spacing: 12px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 8px;
+  }
+}

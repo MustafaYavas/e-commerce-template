@@ -11,3 +11,11 @@ export const createCapitalizeString = (text: string) => {
   }
   return capitalizeTitle;
 };
+
+export const getCategoryImage = (categoryName: string) => {
+  if (categoryName === 'sale') return '/images/home2.jpg';
+  else if (categoryName === 'dining') return '/images/dining.jpg';
+  else if (categoryName === 'living') return '/images/living.jpg';
+  else if (categoryName === 'bedroom') return '/images/bedroom.jpg';
+  else return '/images/home2.jpg';
+};
