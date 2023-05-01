@@ -1,4 +1,3 @@
-import React from 'react';
 import ImageWithText from '../imageWithText/ImageWithText';
 
 interface LoginRightPanel {
