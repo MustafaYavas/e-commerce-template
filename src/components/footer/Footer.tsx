@@ -1,7 +1,7 @@
 import React from 'react';
 import Contact from './contact/Contact';
 import Benefits from './benefits/Benefits';
-import FooterBottom from './footerBottom/FooterSectionThree';
+import FooterBottom from './footerBottom/FooterBottom';
 
 const Footer = () => {
   return (
