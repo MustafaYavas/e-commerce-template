@@ -10,9 +10,15 @@ interface CategoryCardProps {
   categoryName: string;
   image: string;
   left?: boolean;
+  count?: number;
 }
 
-const CategoryCard = ({ categoryName, image, left }: CategoryCardProps) => {
+const CategoryCard = ({
+  categoryName,
+  image,
+  left,
+  count,
+}: CategoryCardProps) => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -21,8 +27,9 @@ const CategoryCard = ({ categoryName, image, left }: CategoryCardProps) => {
     <Link
       href={`/store/${categoryName.toLowerCase()}`}
       className="text-center grid grid-cols-2 md:grid-cols-1 card-over-down"
-      data-aos="flip-up"
+      data-aos="fade-up"
       data-aos-once="true"
+      data-aos-delay={count ? `${300 * count}` : ''}
     >
       <CardTitle
         title={categoryName}

@@ -9,9 +9,10 @@ interface BlogCardProps {
   date: string;
   text: string;
   className: string;
+  count?: number;
 }
 
-const BlogCard = ({ date, text, className }: BlogCardProps) => {
+const BlogCard = ({ date, text, className, count }: BlogCardProps) => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -19,8 +20,9 @@ const BlogCard = ({ date, text, className }: BlogCardProps) => {
   return (
     <div
       className={`text-start grid-two-reverse cursor-pointer ${className}`}
-      data-aos="zoom-out"
+      data-aos="fade-up"
       data-aos-once="true"
+      data-aos-delay={count ? `${300 * count}` : ''}
     >
       <div className="relative">
         <Image

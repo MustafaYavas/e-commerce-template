@@ -10,6 +10,21 @@ interface SectionTwoProps {
 }
 
 const BeautifySpace = ({ title }: SectionTwoProps) => {
+  const imageInfos = [
+    {
+      image: 'beautify1.avif',
+      className: `w-full card-img-radius ${styles['beautify-space-img']} ${styles.one}`,
+    },
+    {
+      image: 'beautify2.avif',
+      className: `w-full card-img-radius hidden xl:block ${styles['beautify-space-img']} ${styles.two}`,
+    },
+    {
+      image: 'beautify3.avif',
+      className: `w-full card-img-radius hidden xl:block ${styles['beautify-space-img']} ${styles.three}`,
+    },
+  ];
+
   return (
     <div
       className={`grid-two ${styles['beautify-space-container']} ${CSS_CLASS.CONTAINER}`}
@@ -28,7 +43,15 @@ const BeautifySpace = ({ title }: SectionTwoProps) => {
         </Link>
       </div>
 
-      <BeautifySpaceImage />
+      <div className="h-full flex justify-center items-center relative">
+        {imageInfos.map((img, i) => (
+          <BeautifySpaceImage
+            key={img.image}
+            image={`/images/${img.image}`}
+            className={img.className}
+          />
+        ))}
+      </div>
     </div>
   );
 };

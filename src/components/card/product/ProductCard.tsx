@@ -13,9 +13,16 @@ interface CardProps {
   image: string;
   price: number;
   discount?: boolean;
+  count?: number;
 }
 
-const ProductCard = ({ productName, image, price, discount }: CardProps) => {
+const ProductCard = ({
+  productName,
+  image,
+  price,
+  discount,
+  count,
+}: CardProps) => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -24,8 +31,9 @@ const ProductCard = ({ productName, image, price, discount }: CardProps) => {
     <Link
       href={`/product/${createLinkFromName(productName)}`}
       className={`${styles['product-card-container']} mb-5 md:mb-10`}
-      data-aos="flip-left"
+      data-aos="fade-up"
       data-aos-once="true"
+      data-aos-delay={count ? `${300 * count}` : '0'}
     >
       <Image
         src={image}

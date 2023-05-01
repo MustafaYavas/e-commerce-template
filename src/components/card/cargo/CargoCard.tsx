@@ -11,7 +11,7 @@ interface CargoCard {
   title: string;
   left?: boolean;
   text: string;
-  step: string;
+  step: number;
 }
 
 const CargoCard = ({ title, left, text, step }: CargoCard) => {
@@ -27,6 +27,7 @@ const CargoCard = ({ title, left, text, step }: CargoCard) => {
       data-aos="fade-up"
       data-aos-anchor-placement="center-bottom"
       data-aos-once="true"
+      data-aos-delay={step ? `${300 * step}` : ''}
     >
       <div className={`relative ${left ? 'order-2' : 'order-1'}`}>
         <Image

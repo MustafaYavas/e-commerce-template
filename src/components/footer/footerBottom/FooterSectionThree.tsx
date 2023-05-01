@@ -3,9 +3,9 @@ import styles from '../Footer.module.scss';
 import Link from 'next/link';
 import List from './List';
 
-const FooterSectionThree = () => {
+const FooterBottom = () => {
   return (
-    <div className={styles['footer-three-container']}>
+    <div className={styles['footer-bottom-container']}>
       <div className="container mx-auto px-5 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
           <div className="col-span-1 md:col-span-3 text-center md:text-start">
@@ -78,4 +78,4 @@ const FooterSectionThree = () => {
   );
 };
 
-export default FooterSectionThree;
+export default FooterBottom;

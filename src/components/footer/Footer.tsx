@@ -1,14 +1,14 @@
 import React from 'react';
-import FooterSectionOne from './footerSectionOne/FooterSectionOne';
-import FooterSectionTwo from './footerSectionTwo/FooterSectionTwo';
-import FooterSectionThree from './footerSectionThree/FooterSectionThree';
+import Contact from './contact/Contact';
+import Benefits from './benefits/Benefits';
+import FooterBottom from './footerBottom/FooterSectionThree';
 
 const Footer = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <FooterSectionOne />
-      <FooterSectionTwo />
-      <FooterSectionThree />
+      <Contact />
+      <Benefits />
+      <FooterBottom />
     </div>
   );
 };
