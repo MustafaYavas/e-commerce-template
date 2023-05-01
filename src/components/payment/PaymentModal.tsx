@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 import { useAppDispatch } from '@/helpers/reduxHooks';
 import { clearCart } from '@/store/cartSlice';
 import { clearLocalStorage } from '@/helpers/productFunctions';

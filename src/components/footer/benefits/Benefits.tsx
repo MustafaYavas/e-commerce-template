@@ -1,4 +1,3 @@
-import Icon from '@/components/Icon/Icon';
 import styles from '../Footer.module.scss';
 import BenefitsItem from './BenefitsItem';
 

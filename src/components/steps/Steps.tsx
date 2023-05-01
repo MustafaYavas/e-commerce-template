@@ -1,4 +1,4 @@
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 import { Product } from '@/helpers/types';
 import Link from 'next/link';
 

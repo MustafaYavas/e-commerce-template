@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Aos from 'aos';
 
-import Icon from '@/components/Icon/Icon';
+import Icon from '@/components/icon/Icon';
 
 interface BenefitsItem {
   iconName: string;

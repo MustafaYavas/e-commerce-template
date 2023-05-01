@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Input from '../input/Input';
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 import { signIn, useSession } from 'next-auth/react';
 import { setErrorAlert } from '@/helpers/alert';
 import { useRouter } from 'next/navigation';

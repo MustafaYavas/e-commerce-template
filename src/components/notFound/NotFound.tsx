@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 
 const NotFound = () => {
   return (

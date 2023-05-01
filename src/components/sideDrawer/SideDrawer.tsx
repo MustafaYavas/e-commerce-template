@@ -1,5 +1,5 @@
 'use client';
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 import styles from './SideDrawer.module.scss';
 import { useEffect, useState } from 'react';
 import { CartProduct } from '@/helpers/types';

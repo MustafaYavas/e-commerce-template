@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import Icon from '../Icon/Icon';
+import Icon from '../icon/Icon';
 import Link from 'next/link';
 
 interface DropdownProps {
