@@ -11,9 +11,7 @@ const LoginContainer = () => {
   const session = useSession();
   const router = useRouter();
 
-  useEffect(() => {
-    if (session?.status === 'authenticated') router.replace('/');
-  }, []);
+  if (session?.status === 'authenticated') router.replace('/');
 
   const handleChangeToLogin = () => {
     setIsLogin(true);
