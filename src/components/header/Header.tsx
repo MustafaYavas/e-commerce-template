@@ -5,7 +5,7 @@ import { useSession, signOut } from 'next-auth/react';
 
 import styles from './Header.module.scss';
 import Dropdown from '../dropdown/Dropdown';
-import Icon from '../icon/Icon';
+import Icon from '../icons/Icon';
 import SideDrawer from '../sideDrawer/SideDrawer';
 import { useAppDispatch, useAppSelector } from '@/helpers/reduxHooks';
 import { getProductById } from '@/helpers/productFunctions';

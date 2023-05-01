@@ -1,4 +1,4 @@
-import Hero from '@/components/hero/Hero';
+import Hero from '@/components/heroSection/Hero';
 import LatestArrivals from '@/components/homeSections/latestArrivals/LatestArrivals';
 import BeautifySpace from '@/components/homeSections/beautifySpace/BeautifySpace';
 import BrowseRange from '@/components/homeSections/browseRange/BrowseRange';

@@ -1,4 +1,4 @@
-import Icon from '@/components/icon/Icon';
+import Icon from '@/components/icons/Icon';
 import styles from '../Footer.module.scss';
 import Link from 'next/link';
 import List from './List';

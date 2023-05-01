@@ -1,5 +1,5 @@
 'use client';
-import Icon from '@/components/icon/Icon';
+import Icon from '@/components/icons/Icon';
 import PaymentItems from '@/components/payment/PaymentItems';
 import Sidebar from '@/components/payment/Sidebar';
 import { useAppSelector } from '@/helpers/reduxHooks';

@@ -1,4 +1,4 @@
-import Icon from '../icon/Icon';
+import Icon from '../icons/Icon';
 
 import Link from 'next/link';
 

@@ -4,7 +4,7 @@ import { CartProduct } from '@/helpers/types';
 import styles from './Payment.module.scss';
 import Link from 'next/link';
 import { createLinkFromName } from '@/helpers/general';
-import Icon from '../icon/Icon';
+import Icon from '../icons/Icon';
 import { deleteItemFromLocalStorage } from '@/helpers/productFunctions';
 import { useAppDispatch } from '@/helpers/reduxHooks';
 import { removeItem } from '@/store/cartSlice';
