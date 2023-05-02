@@ -33,7 +33,7 @@ const ProductCard = ({
       className={`${styles['product-card-container']} mb-5 md:mb-10`}
       data-aos="fade-up"
       data-aos-once="true"
-      data-aos-delay={count ? `${300 * count}` : '0'}
+      data-aos-delay={count ? `${100 * count}` : '0'}
     >
       <Image
         src={image}

@@ -21,7 +21,7 @@ const BenefitsItem = ({ iconName, mainText, subText, count }: BenefitsItem) => {
       className="flex flex-col justify-center items-center"
       data-aos="fade-up"
       data-aos-once="true"
-      data-aos-delay={`${300 * count}`}
+      data-aos-delay={`${100 * count}`}
     >
       <Icon name={iconName} color="rgb(31 41 55)" size={52} />
       <h4 className="text-xl my-4 text-slate-600">{mainText}</h4>

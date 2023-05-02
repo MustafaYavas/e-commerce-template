@@ -24,7 +24,7 @@ const HowWorksBody = () => {
           title={item.title}
           left={i % 2 === 0 ? true : false}
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          step={i}
+          step={item.step}
         />
       ))}
     </div>

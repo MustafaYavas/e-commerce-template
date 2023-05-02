@@ -22,7 +22,7 @@ const BlogCard = ({ date, text, className, count }: BlogCardProps) => {
       className={`text-start grid-two-reverse cursor-pointer ${className}`}
       data-aos="fade-up"
       data-aos-once="true"
-      data-aos-delay={count ? `${300 * count}` : ''}
+      data-aos-delay={count ? `${100 * count}` : ''}
     >
       <div className="relative">
         <Image

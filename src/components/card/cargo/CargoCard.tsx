@@ -27,7 +27,7 @@ const CargoCard = ({ title, left, text, step }: CargoCard) => {
       data-aos="fade-up"
       data-aos-anchor-placement="center-bottom"
       data-aos-once="true"
-      data-aos-delay={step ? `${300 * step}` : ''}
+      data-aos-delay={step ? `${100 * step}` : ''}
     >
       <div className={`relative ${left ? 'order-2' : 'order-1'}`}>
         <Image

@@ -29,7 +29,7 @@ const CategoryCard = ({
       className="text-center grid grid-cols-2 md:grid-cols-1 card-over-down"
       data-aos="fade-up"
       data-aos-once="true"
-      data-aos-delay={count ? `${300 * count}` : ''}
+      data-aos-delay={count ? `${100 * count}` : ''}
     >
       <CardTitle
         title={categoryName}
