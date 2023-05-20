@@ -1,6 +1,6 @@
 'use client';
 import LoginForm from '@/components/login/LoginForm';
-import LoginRightPanel from '@/components/login/LoginRightPanel';
+import LoginSidePanel from '@/components/login/LoginSidePanel';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -23,12 +23,12 @@ const LoginContainer = () => {
 
   return (
     <div className="h-screen overflow-hidden flex justify-between items-center">
-      <LoginForm />
-      <LoginRightPanel
+      <LoginSidePanel
         isLogin={isLogin}
         onChangeLogin={handleChangeToLogin}
         onChangeSignup={handleChangeToSignup}
       />
+      <LoginForm loginStatus={isLogin} onChangeLogin={handleChangeToLogin} />
     </div>
   );
 };

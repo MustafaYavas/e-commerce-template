@@ -1,16 +1,16 @@
 import ImageWithText from '../imageWithText/ImageWithText';
 
-interface LoginRightPanel {
+interface LoginSidePanelProps {
   isLogin: boolean;
   onChangeLogin: () => void;
   onChangeSignup: () => void;
 }
 
-const LoginRightPanel = ({
+const LoginSidePanel = ({
   isLogin,
   onChangeLogin,
   onChangeSignup,
-}: LoginRightPanel) => {
+}: LoginSidePanelProps) => {
   const imageOverElement = () => {
     return (
       <div className="flex flex-col justify-between items-center gap-40">
@@ -49,4 +49,4 @@ const LoginRightPanel = ({
   );
 };
 
-export default LoginRightPanel;
+export default LoginSidePanel;

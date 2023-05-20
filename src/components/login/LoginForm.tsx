@@ -8,8 +8,12 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer } from 'react-toastify';
 import Loading from '../loading/Loading';
 
-const LoginForm = () => {
-  const [isLogin, setIsLogin] = useState(true);
+interface LoginFormProps {
+  loginStatus: boolean;
+  onChangeLogin: () => void;
+}
+
+const LoginForm = ({ loginStatus, onChangeLogin }: LoginFormProps) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +25,7 @@ const LoginForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (email === '' || password === '' || (!isLogin && name === '')) {
+    if (email === '' || password === '' || (!loginStatus && name === '')) {
       setErrorAlert('Inputs can not be left blank!', 3000);
       return;
     }
@@ -31,7 +35,7 @@ const LoginForm = () => {
     }
 
     setIsLoading(true);
-    if (!isLogin) {
+    if (!loginStatus) {
       try {
         await fetch('/api/signup', {
           method: 'POST',
@@ -41,7 +45,7 @@ const LoginForm = () => {
         setName('');
         setEmail('');
         setPassword('');
-        setIsLogin(true);
+        onChangeLogin();
         router.replace('/login');
       } catch (error) {
         throw new Error('Something went wrong while signing up!');
@@ -79,14 +83,14 @@ const LoginForm = () => {
           onSubmit={handleSubmit}
         >
           <h4 className="text-xl md:text-4xl mb-10">
-            {isLogin ? 'Welcome Back' : 'Signup'}
+            {loginStatus ? 'Welcome Back' : 'Signup'}
           </h4>
           {isLoginAfterSignup && (
             <p className="text-md text-green-500">
               Your account has been successfully created. You can login now
             </p>
           )}
-          {!isLogin && (
+          {!loginStatus && (
             <Input
               labelText="Name"
               type="text"
